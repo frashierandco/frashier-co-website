@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112e37">
+  <meta name="description" content="Frashier & Co. is the trade name of Frashier and Company LLC, an Arizona business developing independent digital products, including Pop Badge Passport, and publishing LiveTeal.">
+  <meta name="color-scheme" content="light">
+  <title>Frashier & Co. — Independent ideas, thoughtfully built</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142e37;
+      --deep: #112e37;
+      --teal: #177c80;
+      --teal-dark: #126a6d;
+      --paper: #fbfaf6;
+      --cream: #f3f0e8;
+      --white: #fff;
+      --gold: #d8ad69;
+      --coral: #e39a81;
+      --line: #dfdfd7;
+      --muted: #56676b;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 35px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; border-radius: 2px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; min-height: 90px; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; background: var(--deep); border-radius: 12px; color: white; font-size: 1.08rem; font-weight: 750; letter-spacing: -.065em; }
+    .brand-name { font-size: 1.24rem; font-weight: 760; letter-spacing: -.055em; }
+    .nav { display: flex; align-items: center; gap: clamp(15px, 3vw, 36px); }
+    .nav a { font-size: .88rem; text-decoration: none; font-weight: 650; }
+    .nav a:hover, .simple-link:hover { color: var(--teal-dark); }
+    .nav a:last-child { border: 1px solid var(--ink); padding: 10px 16px; border-radius: 6px; }
+    .nav a:last-child:hover { background: var(--deep); color: #fff; }
+    .eyebrow { color: var(--teal-dark); text-transform: uppercase; letter-spacing: .17em; font-size: .76rem; font-weight: 760; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(315px, .83fr); align-items: center; gap: clamp(36px, 6vw, 95px); padding-block: clamp(75px, 10vw, 134px) clamp(84px, 10vw, 126px); }
+    .hero h1 { max-width: 760px; font-size: clamp(3.35rem, 6.5vw, 6rem); line-height: 1.065; letter-spacing: -.075em; font-weight: 760; margin: 19px 0 25px; }
+    .hero h1 em { color: var(--teal-dark); font-style: normal; }
+    .hero .intro { max-width: 550px; color: var(--muted); font-size: clamp(1.06rem, 1.8vw, 1.23rem); line-height: 1.75; margin: 0 0 32px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 21px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .9rem; transition: background .15s ease, color .15s ease; }
+    .button-primary { color: #fff; background: var(--deep); }
+    .button-primary:hover { background: var(--teal-dark); }
+    .button-outline { color: var(--ink); border: 1px solid #b7c2c0; background: transparent; }
+    .button-outline:hover { background: #edece5; }
+    .illustration { position: relative; overflow: hidden; width: 100%; max-width: 440px; min-height: 455px; border-radius: 11px; background: var(--deep); justify-self: end; isolation: isolate; }
+    .illustration::before { content: ""; position: absolute; inset: 18px; border: 1px solid #ffffff30; border-radius: 4px; }
+    .illustration::after { content: ""; position: absolute; height: 290px; width: 290px; border: 1px solid #ffffff20; border-radius: 50%; top: -115px; right: -95px; }
+    .illustration .smalltop { position: absolute; top: 42px; left: 43px; color: #bed4d2; font-size: .7rem; letter-spacing: .22em; font-weight: 700; }
+    .illustration .display { position: absolute; top: 95px; left: 45px; font-size: clamp(5.5rem, 12vw, 10rem); line-height: 1; letter-spacing: -.115em; font-weight: 770; color: #fffdf2; }
+    .illustration .display span { color: var(--gold); }
+    .illustration .rings { position: absolute; display: flex; align-items: center; gap: 16px; bottom: 83px; left: 48px; }
+    .circle { width: 65px; height: 65px; border-radius: 50%; border: 7px solid var(--teal); background: #b3ded9; }
+    .pentagon { width: 69px; height: 72px; background: var(--gold); clip-path: polygon(50% 0%, 97% 35%, 80% 100%, 20% 100%, 3% 35%); position: relative; }
+    .pentagon::after { content: ""; position: absolute; inset: 8px; background: var(--deep); clip-path: inherit; }
+    .small-circle { width: 36px; height: 36px; background: var(--coral); border-radius: 50%; margin-left: 2px; }
+    .illustration .bottom { position: absolute; bottom: 36px; left: 44px; right: 44px; border-top: 1px solid #ffffff32; padding-top: 13px; color: #c0d4d4; font-size: .73rem; letter-spacing: .085em; }
+    .section { border-top: 1px solid var(--line); padding-block: clamp(66px, 8vw, 100px); }
+    .section-head { max-width: 740px; margin-bottom: 35px; }
+    h2 { font-size: clamp(2.1rem, 4vw, 3.65rem); font-weight: 750; letter-spacing: -.06em; line-height: 1.16; margin: 11px 0 15px; }
+    .section-head p, .body-copy { font-size: 1.05rem; color: var(--muted); line-height: 1.8; }
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .work-card { background: var(--white); border: 1px solid var(--line); border-radius: 9px; overflow: hidden; display: flex; flex-direction: column; }
+    .work-art { min-height: 170px; padding: 24px 27px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .work-art.pop { background: #e2eeee; color: #145f66; }
+    .work-art.teal { background: #fbece7; color: #a14f42; }
+    .art-initial { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -.065em; font-weight: 760; }
+    .art-symbols { display: flex; gap: 6px; align-items: center; }
+    .art-symbols .circle { width: 41px; height: 41px; border-width: 5px; background: #f3faf9; }
+    .art-symbols .pentagon { width: 45px; height: 47px; }
+    .art-symbols .pentagon::after { inset: 6px; background: #e2eeee; }
+    .flower { width: 64px; height: 64px; display: grid; place-items: center; border: 2px solid currentColor; border-radius: 16px; font-size: 2.3rem; font-weight: 350; transform: rotate(-9deg); }
+    .work-content { padding: 27px 29px 30px; flex: 1; display: flex; flex-direction: column; }
+    .work-kicker { color: var(--teal-dark); font-size: .71rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .work-content h3 { margin: 8px 0 10px; font-size: 1.55rem; letter-spacing: -.045em; line-height: 1.25; }
+    .work-content p { color: var(--muted); font-size: .98rem; line-height: 1.72; margin: 0; }
+    .work-link { display: inline-flex; align-items: center; margin-top: auto; padding-top: 23px; font-size: .88rem; color: var(--teal-dark); font-weight: 750; text-underline-offset: 4px; }
+    .work-note { max-width: 800px; margin: 25px 0 0; color: var(--muted); font-size: .83rem; line-height: 1.65; }
+    .about-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 8vw, 130px); align-items: start; }
+    .about-layout h2 { margin-bottom: 0; }
+    .about-layout p:first-child { margin-top: 6px; }
+    .about-layout p { color: var(--muted); line-height: 1.85; font-size: 1.07rem; }
+    .contact-band { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .contact-inner { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding-block: 78px; }
+    .contact-inner h2 { margin-bottom: 0; }
+    .contact-inner .contact-sub { margin: 13px 0 0; color: var(--muted); }
+    .contact-link { background: var(--deep); color: #fff; padding: 16px 21px; border-radius: 6px; text-decoration: none; font-weight: 750; white-space: nowrap; min-height: 52px; display: inline-flex; align-items: center; justify-content: center; }
+    .contact-link:hover { background: var(--teal-dark); }
+    footer { padding-block: 36px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 26px; color: var(--muted); font-size: .85rem; }
+    footer strong { display: block; color: var(--ink); margin-bottom: 3px; font-weight: 740; }
+    footer .legal { max-width: 560px; }
+    footer .legal span { display: block; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; padding-top: 75px; }
+      .hero h1 { max-width: 760px; }
+      .illustration { justify-self: stretch; max-width: none; min-height: 310px; }
+      .illustration .display { top: 77px; font-size: 7rem; }
+      .illustration .rings { bottom: 64px; left: auto; right: 45px; }
+      .illustration .bottom { bottom: 25px; }
+      .about-layout { grid-template-columns: 1fr; gap: 22px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 36px, 1160px); }
+      .nav-wrap { min-height: 75px; gap: 10px; }
+      .brand-mark { width: 35px; height: 35px; border-radius: 10px; font-size: .9rem; }
+      .brand { gap: 8px; }
+      .brand-name { font-size: 1.08rem; }
+      .nav { gap: 13px; }
+      .nav a { font-size: .81rem; }
+      .nav a:first-child { display: none; }
+      .nav a:last-child { padding: 8px 11px; }
+      .hero { padding-top: 60px; padding-bottom: 72px; gap: 44px; }
+      .hero h1 { font-size: clamp(3rem, 12.5vw, 4.45rem); }
+      .illustration { min-height: 280px; }
+      .illustration .smalltop { left: 27px; top: 27px; }
+      .illustration .display { left: 27px; top: 77px; font-size: 6rem; }
+      .illustration .rings { transform: scale(.68); transform-origin: right bottom; right: 25px; bottom: 60px; }
+      .illustration .bottom { left: 27px; right: 27px; bottom: 18px; font-size: .66rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; padding-block: 65px; }
+      .contact-link { justify-self: start; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a href="#top" class="brand" aria-label="Frashier and Co. home"><span class="brand-mark" aria-hidden="true">F.</span><span class="brand-name">Frashier &amp; Co.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#work">Our work</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">An independent company based in Arizona</div>
+        <h1>Good ideas,<br><em>made real.</em></h1>
+        <p class="intro">Frashier &amp; Co. creates and operates thoughtful digital products and online experiences—built with purpose, attention to detail, and real people in mind.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#work">Explore our work</a>
+          <a class="button button-outline" href="mailto:kyle@frashier.com">Get in touch</a>
+        </div>
+      </div>
+      <div class="illustration" aria-hidden="true">
+        <div class="smalltop">FRASHIER &amp; COMPANY / ARIZONA</div>
+        <div class="display">F<span>&amp;</span>Co.</div>
+        <div class="rings"><div class="circle"></div><div class="pentagon"></div><div class="small-circle"></div></div>
+        <div class="bottom">INDEPENDENT IDEAS · THOUGHTFUL EXECUTION</div>
+      </div>
+    </div>
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Our projects</div><h2 id="work-title">What we're building.</h2><p>Our projects serve different audiences, but share the same approach: clear design, practical value, and experiences worth returning to.</p></div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-art pop" aria-hidden="true"><div class="art-initial">Pop Badge<br>Passport</div><div class="art-symbols"><div class="circle"></div><div class="pentagon"></div></div></div>
+            <div class="work-content">
+              <div class="work-kicker">Digital product · In development</div>
+              <h3>Pop Badge Passport</h3>
+              <p>An independent collection companion for LEGOLAND Pop Badge enthusiasts. Designed to help families catalog their badges, track individual finds, and explore collectible variants in one place.</p>
+              <span class="work-link">Coming soon</span>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-art teal" aria-hidden="true"><div class="art-initial">LiveTeal</div><div class="flower">✳</div></div>
+            <div class="work-content">
+              <div class="work-kicker">Digital publishing · Online</div>
+              <h3>LiveTeal</h3>
+              <p>A lifestyle and recipe website with approachable ideas for busy households, including family-friendly meals and practical everyday inspiration.</p>
+              <a class="work-link simple-link" href="https://liveteal.com/" target="_blank" rel="noopener noreferrer">Visit LiveTeal.com ↗</a>
+            </div>
+          </article>
+        </div>
+        <p class="work-note">Pop Badge Passport is an independently developed fan companion. It is not affiliated with, endorsed by, or sponsored by the LEGO Group, LEGOLAND, or their operators. Brand names are used descriptively.</p>
+      </div>
+    </section>
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about-layout">
+        <div><div class="eyebrow">About the company</div><h2 id="about-title">Independent by design.</h2></div>
+        <div>
+          <p><strong>Frashier &amp; Co.</strong> is the public-facing trade name of <strong>Frashier and Company LLC</strong>, an Arizona limited liability company.</p>
+          <p>We develop and manage our own projects, from a digital collectible-organizing app to useful editorial content for everyday life. Our focus is on straightforward ideas, careful craftsmanship, and making things genuinely useful.</p>
+          <p>We are based in Arizona, United States, and can be reached directly for company, product, or business inquiries.</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div><div class="eyebrow">Contact</div><h2 id="contact-title">Let's connect.</h2><p class="contact-sub">Questions about the company or one of our projects? We'd be glad to hear from you.</p></div>
+        <a class="contact-link" href="mailto:kyle@frashier.com">kyle@frashier.com ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="legal"><strong>Frashier &amp; Co.</strong><span>Trade name of Frashier and Company LLC</span><span>Arizona, United States</span></div>
+    <div>© 2026 Frashier and Company LLC. All rights reserved.</div>
+  </footer>
+</body>
+</html>
